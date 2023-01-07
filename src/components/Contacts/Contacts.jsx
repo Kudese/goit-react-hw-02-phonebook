@@ -1,11 +1,13 @@
-export default function Contacts() {
+import s from "../Contacts/Contacts.module.css"
+export default function Contacts({contacts}) {
   return (
-    <input
-      type="text"
-      name="name"
-      pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-      title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-      required
-    />
+    <div className={s.conteiner}>
+    <h2>Contacts</h2>
+    <ul>
+    {contacts.map((el)=>{
+      return <li key={el.id}>{el.name}</li>
+    })}
+    </ul>
+    </div>
   );
 }
