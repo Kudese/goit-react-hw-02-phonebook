@@ -20,11 +20,12 @@ export default class App extends Component {
     const name = e.target.name.value;
     const contacts = this.state.contacts;
     let inListContact;
-    contacts.map(el => {
+    contacts.forEach(el => {
       if (el.name === name) {
         inListContact = true;
       }
     });
+    
     return inListContact;
   };
   handleDeleteContact = id => {
